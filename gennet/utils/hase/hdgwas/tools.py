@@ -7,7 +7,7 @@ import h5py
 import pandas as pd
 from scipy import stats
 
-from GenNet_utils.hase.hdgwas.hash import *
+from gennet.utils.hase.hdgwas.hash import *
 
 
 def timer(func):

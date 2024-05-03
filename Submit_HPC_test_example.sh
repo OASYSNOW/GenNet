@@ -23,4 +23,4 @@ module load TensorFlow/2.2.0-fosscuda-2019b-Python-3.7.4
 source $HOME/venv_GenNet_37/bin/activate
 
 
-python GenNet.py train -path ./examples/example_classification/ -ID 111311211214261 -epochs 25 -one_hot
+python gennet/cli.py train -path ./examples/example_classification/ -ID 111311211214261 -epochs 25 -one_hot

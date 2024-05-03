@@ -1,6 +1,6 @@
 import numpy as np
 
-from GenNet_utils.hase.hdgwas.tools import Timer
+from gennet.utils.hase.hdgwas.tools import Timer
 
 
 # @timing

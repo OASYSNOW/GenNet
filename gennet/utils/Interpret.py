@@ -15,9 +15,9 @@ import interpretation.DFIM as DFIM
 from interpretation.weight_importance import make_importance_values_input
 from interpretation.NID import Get_weight_tsang, GenNet_pairwise_interactions_topn
 
-from GenNet_utils.Train_network import load_trained_network
-from GenNet_utils.Create_network import remove_batchnorm_model, remove_cov
-from GenNet_utils.Dataloader import EvalGenerator
+from gennet.utils.Train_network import load_trained_network
+from gennet.utils.Create_network import remove_batchnorm_model, remove_cov
+from gennet.utils.Dataloader import EvalGenerator
 
 def interpret(args):
     if args.type == 'get_weight_scores':

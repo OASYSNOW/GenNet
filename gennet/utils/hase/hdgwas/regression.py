@@ -4,8 +4,8 @@ import os
 
 import numpy as np
 
-from GenNet_utils.hase.hdgwas.hdregression import HASE, A_covariates, A_tests, B_covariates, C_matrix, A_inverse, B4
-from GenNet_utils.hase.hdgwas.tools import study_indexes, Timer, merge_genotype
+from gennet.utils.hase.hdgwas.hdregression import HASE, A_covariates, A_tests, B_covariates, C_matrix, A_inverse, B4
+from gennet.utils.hase.hdgwas.tools import study_indexes, Timer, merge_genotype
 
 
 def haseregression(phen, gen, cov, mapper, Analyser, maf, intercept=True, interaction=None):

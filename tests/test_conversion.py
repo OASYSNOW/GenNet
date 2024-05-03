@@ -14,10 +14,10 @@ from os.path import dirname, abspath
 import argparse
 
 print(sys.path)
-from GenNet_utils.Create_plots import plot
+from gennet.utils.Create_plots import plot
 # from GenNet_utils.Train_network import train_model
-from GenNet_utils.Convert import convert
-from GenNet_utils.Topology import topology
+from gennet.utils.Convert import convert
+from gennet.utils.Topology import topology
 
 
 class ArgparseSimulatorConvert():

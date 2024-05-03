@@ -15,10 +15,10 @@ source /trinity/home/avanhilten/miniconda3/etc/profile.d/conda.sh
 conda init
 conda activate env_GenNet_tf28
 
-CUDA_VISIBLE_DEVICES='' python GenNet.py interpret  -resultpath ./results/GenNet_experiment_101_/  -type pathexplain -num_eval 100  -start_rank 0  -end_rank 5  & 
-CUDA_VISIBLE_DEVICES='' python GenNet.py interpret  -resultpath ./results/GenNet_experiment_101_/  -type pathexplain -num_eval 100  -start_rank 5  -end_rank 10 &
-CUDA_VISIBLE_DEVICES='' python GenNet.py interpret  -resultpath ./results/GenNet_experiment_101_/  -type pathexplain -num_eval 100  -start_rank 10 -end_rank 15 &
-CUDA_VISIBLE_DEVICES='' python GenNet.py interpret  -resultpath ./results/GenNet_experiment_101_/  -type pathexplain -num_eval 100  -start_rank 15 -end_rank 20 &
+CUDA_VISIBLE_DEVICES='' python gennet/cli.py interpret  -resultpath ./results/GenNet_experiment_101_/  -type pathexplain -num_eval 100  -start_rank 0  -end_rank 5  & 
+CUDA_VISIBLE_DEVICES='' python gennet/cli.py interpret  -resultpath ./results/GenNet_experiment_101_/  -type pathexplain -num_eval 100  -start_rank 5  -end_rank 10 &
+CUDA_VISIBLE_DEVICES='' python gennet/cli.py interpret  -resultpath ./results/GenNet_experiment_101_/  -type pathexplain -num_eval 100  -start_rank 10 -end_rank 15 &
+CUDA_VISIBLE_DEVICES='' python gennet/cli.py interpret  -resultpath ./results/GenNet_experiment_101_/  -type pathexplain -num_eval 100  -start_rank 15 -end_rank 20 &
 
 wait
 

@@ -3,24 +3,24 @@ import sys
 
 import numpy as np
 
-from GenNet_utils.hase.config import MAPPER_CHUNK_SIZE, basedir, CONVERTER_SPLIT_SIZE, PYTHON_PATH
+from gennet.utils.hase.config import MAPPER_CHUNK_SIZE, basedir, CONVERTER_SPLIT_SIZE, PYTHON_PATH
 
 os.environ['HASEDIR'] = basedir
 if PYTHON_PATH is not None:
     for i in PYTHON_PATH: sys.path.insert(0, i)
-from GenNet_utils.hase.hdgwas.tools import Timer, Checker, study_indexes, Mapper, HaseAnalyser, merge_genotype, \
+from gennet.utils.hase.hdgwas.tools import Timer, Checker, study_indexes, Mapper, HaseAnalyser, merge_genotype, \
     check_np, check_converter
-from GenNet_utils.hase.hdgwas.converter import GenotypePLINK, GenotypeMINIMAC, GenotypeVCF
-from GenNet_utils.hase.hdgwas.data import Reader, MetaParData, MetaPhenotype
-from GenNet_utils.hase.hdgwas.fake import Encoder
-from GenNet_utils.hase.hdgwas.hdregression import HASE, A_inverse, B4
+from gennet.utils.hase.hdgwas.converter import GenotypePLINK, GenotypeMINIMAC, GenotypeVCF
+from gennet.utils.hase.hdgwas.data import Reader, MetaParData, MetaPhenotype
+from gennet.utils.hase.hdgwas.fake import Encoder
+from gennet.utils.hase.hdgwas.hdregression import HASE, A_inverse, B4
 import argparse
 import gc
-from GenNet_utils.hase.hdgwas.pard import partial_derivatives
-from GenNet_utils.hase.hdgwas.regression import haseregression
+from gennet.utils.hase.hdgwas.pard import partial_derivatives
+from gennet.utils.hase.hdgwas.regression import haseregression
 import pandas as pd
 import time
-from GenNet_utils.hase.hdgwas.protocol import Protocol
+from gennet.utils.hase.hdgwas.protocol import Protocol
 
 __version__ = '1.1.0'
 
@@ -139,7 +139,7 @@ if __name__ == '__main__':
 
     if not os.path.isdir(args.out):
         print("Creating output folder {}".format(args.out))
-        os.mkdir(args.out)
+        os.makedirs(args.out)
 
     if args.np:
         check_np()

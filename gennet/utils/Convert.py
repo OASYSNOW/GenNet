@@ -9,15 +9,15 @@ import tables
 import tqdm
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
-from GenNet_utils.Utility_functions import query_yes_no
-from GenNet_utils.hase.config import basedir, CONVERTER_SPLIT_SIZE, PYTHON_PATH
+from gennet.utils.Utility_functions import query_yes_no
+from gennet.utils.hase.config import basedir, CONVERTER_SPLIT_SIZE, PYTHON_PATH
 
 os.environ['HASEDIR'] = basedir
 if PYTHON_PATH is not None:
     for i in PYTHON_PATH: sys.path.insert(0, i)
-from GenNet_utils.hase.hdgwas.tools import Timer, check_converter
-from GenNet_utils.hase.hdgwas.converter import GenotypePLINK, GenotypeMINIMAC, GenotypeVCF
-from GenNet_utils.hase.hdgwas.data import Reader
+from gennet.utils.hase.hdgwas.tools import Timer, check_converter
+from gennet.utils.hase.hdgwas.converter import GenotypePLINK, GenotypeMINIMAC, GenotypeVCF
+from gennet.utils.hase.hdgwas.data import Reader
 
 
 def hase_convert(args):
@@ -267,7 +267,7 @@ def transpose_genotype_scheduler(args):
     print('Submitting' + str(args.n_jobs))
     print('Please make sure this file has the correct settings for your cluster')
     print("____________________________________________________________________")
-    with open('./GenNet_utils/submit_SLURM_multi_transpose.sh', 'r') as f:
+    with open('./gennet/utils/submit_SLURM_multi_transpose.sh', 'r') as f:
         print(f.read())
     print("____________________________________________________________________")
 
@@ -277,13 +277,13 @@ def transpose_genotype_scheduler(args):
             tills = min(((job_n + 1) * jobchunk), num_pat)
             if local_run:
                 # transpose_genotype_job(begins, tills, job_n, args.study_name, args.outfolder, args.tcm)
-                str_sbatch = 'nohup python ./GenNet_utils/Convert.py -job_begins ' + str(begins) + ' -job_tills ' + str(
+                str_sbatch = 'nohup python ./gennet/utils/Convert.py -job_begins ' + str(begins) + ' -job_tills ' + str(
                     tills) + ' -job_n ' + str(job_n) + ' -study_name ' + str(args.study_name) + ' -outfolder ' + str(
                     args.outfolder) + ' -tcm ' + str(args.tcm) + " & "
                 print(str_sbatch)
                 os.system(str_sbatch)
             else:
-                str_sbatch = 'sbatch ./GenNet_utils/submit_SLURM_multi_transpose.sh ' + str(begins) + ' ' + str(
+                str_sbatch = 'sbatch ./gennet/utils/submit_SLURM_multi_transpose.sh ' + str(begins) + ' ' + str(
                     tills) + ' ' + str(job_n) + ' ' + str(args.study_name) + ' ' + str(
                     args.outfolder) + ' ' + str(args.tcm)
                 print(str_sbatch)

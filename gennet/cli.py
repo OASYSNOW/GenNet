@@ -5,11 +5,14 @@ import warnings
 warnings.filterwarnings('ignore')
 import argparse
 
-sys.path.insert(1, os.path.dirname(os.getcwd()) + "/GenNet_utils/")
-
 
 def main():
     args = ArgumentParser().parse_cmd_args()
+
+    if "out" in args and not os.path.exists(args.out):
+            print("-out directory did not exist but is made now")
+            os.makedirs(args.out)
+
 
     if args.mode == 'train':
         if args.problem_type == "classification":
@@ -18,20 +21,20 @@ def main():
             args.regression = True
         else:
             print('something went wrong invalid problem type', args.problem_type)
-        from GenNet_utils.Train_network import train_model
+        from gennet.utils.Train_network import train_model
         train_model(args)
         
     elif args.mode == "plot":
-        from GenNet_utils.Create_plots import plot
+        from gennet.utils.Create_plots import plot
         plot(args)
     if args.mode == 'convert':
-        from GenNet_utils.Convert import convert
+        from gennet.utils.Convert import convert
         convert(args)
     if args.mode == "topology":
-        from GenNet_utils.Topology import topology
+        from gennet.utils.Topology import topology
         topology(args)
     if args.mode == "interpret":
-        from GenNet_utils.Interpret import interpret
+        from gennet.utils.Interpret import interpret
         interpret(args)
 
 

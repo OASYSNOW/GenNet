@@ -19,5 +19,5 @@ module load TensorFlow/2.2.0-fosscuda-2019b-Python-3.7.4
 source $HOME/venv_GenNet_37/bin/activate
 
 
-CUDA_VISIBLE_DEVICES='', python GenNet.py train -path /trinity/home/avanhilten/repositories/UK_biobank/15_gennet_genotyped/height_regressed_out_QC/ -ID $1 -genotype_path /data/scratch/avanhilten/UK_biobank_genotype_not_imputed/genotype/ -problem_type regression -lr $2 -bs $3 -L1 $4 -epoch_size 50000  -resume -network_name $5 -filters $6
+CUDA_VISIBLE_DEVICES='', python gennet/cli.py train -path /trinity/home/avanhilten/repositories/UK_biobank/15_gennet_genotyped/height_regressed_out_QC/ -ID $1 -genotype_path /data/scratch/avanhilten/UK_biobank_genotype_not_imputed/genotype/ -problem_type regression -lr $2 -bs $3 -L1 $4 -epoch_size 50000  -resume -network_name $5 -filters $6
 

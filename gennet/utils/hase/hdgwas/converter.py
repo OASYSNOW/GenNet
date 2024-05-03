@@ -8,8 +8,8 @@ import numpy as np
 import pandas as pd
 import tables
 
-from GenNet_utils.hase.hdgwas.data import MINIMACHDF5Folder
-from GenNet_utils.hase.hdgwas.tools import Timer
+from gennet.utils.hase.hdgwas.data import MINIMACHDF5Folder
+from gennet.utils.hase.hdgwas.tools import Timer
 
 
 class Genotype(object):
@@ -149,9 +149,9 @@ class GenotypePLINK(GenotypeHDF5):
 
         if force:
             try:
-                os.mkdir(os.path.join(out, 'genotype'))
-                os.mkdir(os.path.join(out, 'individuals'))
-                os.mkdir(os.path.join(out, 'probes'))
+                os.makedirs(os.path.join(out, 'genotype'))
+                os.makedirs(os.path.join(out, 'individuals'))
+                os.makedirs(os.path.join(out, 'probes'))
             except:
                 print(('Directories "genotype","probes","individuals" are already exist in {}...'.format(self.out)))
 
@@ -238,7 +238,7 @@ class GenotypeMINIMAC(object):
                 self.folder.pool.remove(type='all')
             else:
                 try:
-                    os.mkdir(os.path.join(out, 'id_genotype'))
+                    os.makedirs(os.path.join(out, 'id_genotype'))
                 except:
                     print('id_genotype folder already exist')
 

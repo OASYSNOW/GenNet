@@ -1,4 +1,4 @@
-from GenNet_utils.hase.hdgwas.data import Reader
+from gennet.utils.hase.hdgwas.data import Reader
 
 
 class HASE:

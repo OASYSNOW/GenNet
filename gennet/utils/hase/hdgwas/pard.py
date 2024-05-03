@@ -3,8 +3,8 @@ import time
 
 import numpy as np
 
-from GenNet_utils.hase.hdgwas.hdregression import A_covariates, A_tests, B_covariates, C_matrix, B4
-from GenNet_utils.hase.hdgwas.tools import study_indexes, Timer
+from gennet.utils.hase.hdgwas.hdregression import A_covariates, A_tests, B_covariates, C_matrix, B4
+from gennet.utils.hase.hdgwas.tools import study_indexes, Timer
 
 
 def merge_PD(path, max_node, study_name):

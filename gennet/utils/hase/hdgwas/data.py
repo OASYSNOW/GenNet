@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 from numpy import genfromtxt
 
-from GenNet_utils.hase.hdgwas.tools import Mapper
+from gennet.utils.hase.hdgwas.tools import Mapper
 
 
 try:

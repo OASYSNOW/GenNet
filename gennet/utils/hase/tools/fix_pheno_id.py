@@ -19,7 +19,7 @@ out_path = args.out
 
 if not os.path.isdir(out_path):
     print("Creating directory {}".format(out_path))
-    os.mkdir(out_path)
+    os.makedirs(out_path)
 else:
     if len(os.listdir(out_path)) != 0:
         raise ValueError('Output folder is not empty!')

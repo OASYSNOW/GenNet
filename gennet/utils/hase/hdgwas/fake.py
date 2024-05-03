@@ -24,9 +24,9 @@ class Encoder(object):
         self.phen_info_dic['id'] = None
         try:
             print('Creating directories...')
-            os.mkdir(os.path.join(self.out, 'encode_genotype'))
-            os.mkdir(os.path.join(self.out, 'encode_phenotype'))
-            os.mkdir(os.path.join(self.out, 'encode_individuals'))
+            os.makedirs(os.path.join(self.out, 'encode_genotype'))
+            os.makedirs(os.path.join(self.out, 'encode_phenotype'))
+            os.makedirs(os.path.join(self.out, 'encode_individuals'))
 
         except:
             print((

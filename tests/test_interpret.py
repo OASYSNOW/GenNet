@@ -5,7 +5,7 @@ import shutil
 from os.path import dirname, abspath
 import os
 sys.path.insert(1, os.getcwd())
-from GenNet_utils.Interpret import interpret
+from gennet.utils.Interpret import interpret
 
 # TODO: add test without covariates
 # TODO add test with covariates for regression + classification

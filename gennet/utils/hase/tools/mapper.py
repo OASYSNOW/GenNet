@@ -2,14 +2,14 @@ import os
 import sys
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from GenNet_utils.hase.config import *
+from gennet.utils.hase.config import *
 
 if PYTHON_PATH is not None:
     for i in PYTHON_PATH: sys.path.insert(0, i)
 import pandas as pd
 import argparse
-from GenNet_utils.hase.hdgwas.tools import Reference, Timer
-from GenNet_utils.hase.hdgwas.hash import *
+from gennet.utils.hase.hdgwas.tools import Reference, Timer
+from gennet.utils.hase.hdgwas.hash import *
 import gc
 
 if __name__ == '__main__':
@@ -31,7 +31,7 @@ if __name__ == '__main__':
 
     try:
         print('Creating directories...')
-        os.mkdir(args.out)
+        os.makedirs(args.out)
     except:
         print(('Directory {} is already exist!'.format(args.out)))
 

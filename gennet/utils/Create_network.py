@@ -15,12 +15,12 @@ tf.keras.backend.set_epsilon(0.0000001)
 tf_version = tf.__version__  # ToDo use packaging.version
 
 if tf_version <= '1.13.1':
-    from GenNet_utils.LocallyDirected1D import LocallyDirected1D
+    from gennet.utils.LocallyDirected1D import LocallyDirected1D
 elif tf_version >= '2.0':
-    from GenNet_utils.LocallyDirected1D import LocallyDirected1D
+    from gennet.utils.LocallyDirected1D import LocallyDirected1D
 else:
     print("unexpected tensorflow version")
-    from GenNet_utils.LocallyDirected1D import LocallyDirected1D
+    from gennet.utils.LocallyDirected1D import LocallyDirected1D
     
     
 def example_network():

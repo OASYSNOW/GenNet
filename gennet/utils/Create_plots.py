@@ -7,7 +7,7 @@ import pandas as pd
 import plotly.express as px
 import seaborn as sns
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from GenNet_utils.Utility_functions import get_paths
+from gennet.utils.Utility_functions import get_paths
 
 def plot_loss_function(resultpath):
         log_file = pd.read_csv(resultpath + "/train_log.csv")

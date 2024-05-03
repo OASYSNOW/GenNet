@@ -3,9 +3,9 @@ import pytest
 import pandas as pd
 import shutil
 from os.path import dirname, abspath
-from GenNet_utils.Interpret import interpret
-from GenNet_utils.Create_plots import  sunburst_plot, plot_layer_weight, manhattan_relative_importance
-from GenNet_utils.Utility_functions import get_paths
+from gennet.utils.Interpret import interpret
+from gennet.utils.Create_plots import  sunburst_plot, plot_layer_weight, manhattan_relative_importance
+from gennet.utils.Utility_functions import get_paths
 
 # TODO: add test without covariates
 # TODO add test with covariates for regression + classification

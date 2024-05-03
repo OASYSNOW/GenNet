@@ -2,12 +2,12 @@ import os
 import sys
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from GenNet_utils.hase.config import basedir, PYTHON_PATH
+from gennet.utils.hase.config import basedir, PYTHON_PATH
 
 os.environ['HASEDIR'] = basedir
 if PYTHON_PATH is not None:
     for i in PYTHON_PATH: sys.path.insert(0, i)
-from GenNet_utils.hase.hdgwas.tools import HaseAnalyser
+from gennet.utils.hase.hdgwas.tools import HaseAnalyser
 import argparse
 import pandas as pd
 import numpy as np
